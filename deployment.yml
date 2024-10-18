@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: ronak
+  name: r
 
 ---
 
@@ -9,7 +9,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: facebook
-  namespace: ronak
+  namespace: r
 spec:
   replicas: 15
   selector:
@@ -32,7 +32,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: facebook-svc
-  namespace: ronak
+  namespace: r
 spec:
   selector:
     app: facebook
