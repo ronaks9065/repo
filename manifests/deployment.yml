@@ -8,20 +8,20 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: facebook
+  name: application
   namespace: app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: facebook
+      app: application
   template:
     metadata:
       labels:
-        app: facebook
+        app: application
     spec:
       containers:
-      - name: facebook
+      - name: application
         image: gcr.io/google-samples/hello-app:1.0
         ports:
         - containerPort: 8080
@@ -31,11 +31,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: facebook-svc
+  name: application-svc
   namespace: app
 spec:
   selector:
-    app: facebook
+    app: application
   ports:
     - protocol: TCP
       port: 8080
